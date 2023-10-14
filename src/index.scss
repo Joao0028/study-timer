@@ -15,18 +15,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-@layer components {
-  .appTsx {
-    @apply bg-slate-700 w-full h-screen text-white flex justify-center items-center
-  }
-  .containerPrincipal {
-    @apply flex flex-col items-center w-[500px] 
-  }
-  .container {
-    @apply flex justify-center bg-white text-black p-10
-  }
-  .containerImagem{
-    @apply bg-gradient-to-r from-cyan-500 to-blue-500 w-full flex justify-center p-10
-  }
-}
