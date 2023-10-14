@@ -15,3 +15,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@layer components {
+  .appTsx {
+    @apply bg-slate-700 w-full h-screen text-white flex justify-center items-center
+  }
+}

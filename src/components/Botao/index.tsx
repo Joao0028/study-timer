@@ -1,7 +1,11 @@
 import React from "react";
 
-export default function Botao(){
+interface BotaoProps {
+    texto?:string
+}
+
+export default function Botao({texto = "Enviar"}: BotaoProps){
     return (
-        <button className=" bg-slate-400">Texto</button>
+        <button className=" bg-cor-azulClaro font-medium h-[40px] w-[140px] rounded-lg hover:opacity-95  ">{texto}</button>
     )
 }
