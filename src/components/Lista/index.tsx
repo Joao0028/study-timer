@@ -16,13 +16,13 @@ export default function Lista() {
     },
   ];
   return (
-    <aside>
-      <h2>Estudos do dia</h2>
+    <aside className="lista">
+      <h2 className="font-bold">Estudos do dia</h2>
       <ul>
         {tarefas.map((item, index) => (
-          <li key={index}>
-            <h3>{item.tarefa}</h3>
-            <span>{item.tempo}</span>
+          <li key={index} className="mb-4 bg-[#141414] pl-3 w-[250px] py-[6px] border-solid border-l-2 border-cor-azulClaro">
+            <h3 className="font-medium">{item.tarefa}</h3>
+            <span className="text-cor-cinza">{item.tempo}</span>
           </li>
         ))}
       </ul>
