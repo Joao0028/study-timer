@@ -2,6 +2,6 @@ import React from "react";
 
 export default function Botao(){
     return (
-        <button>Texto</button>
+        <button className=" bg-slate-400">Texto</button>
     )
 }
