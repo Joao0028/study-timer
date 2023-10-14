@@ -1,12 +1,12 @@
 import React from 'react';
+import Formulario from './components/Formulario';
+import Lista from './components/Lista';
 
-function App() {
-  
-  const nome = "João Paulo"
-  
+function App() {  
   return (
     <div className="App">
-      <h1>Olá meu nome é {nome}</h1>
+      <Formulario />
+      <Lista />
     </div>
   );
 }
