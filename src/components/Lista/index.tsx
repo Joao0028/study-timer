@@ -16,11 +16,11 @@ export default function Lista() {
     },
   ];
   return (
-    <aside className="lista">
+    <aside className="max-[500px]:mb-[6em]">
       <h2 className="font-bold">Estudos do dia</h2>
-      <ul>
+      <ul className="scrolUl">
         {tarefas.map((item, index) => (
-          <li key={index} className="mb-4 bg-[#141414] pl-3 w-[250px] py-[6px] border-solid border-l-2 border-cor-azulClaro">
+          <li key={index} className="mb-3 bg-[#141414] pl-3 w-[325px] cursor-pointer py-[6px] border-solid border-b-2 border-cor-azulClaro max-md:w-[430px] max-[500px]:w-[325px] mr-1 ">
             <h3 className="font-medium">{item.tarefa}</h3>
             <span className="text-cor-cinza">{item.tempo}</span>
           </li>

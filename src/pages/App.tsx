@@ -1,8 +1,8 @@
 import React from "react";
-import "./App.scss";
 import Formulario from "../components/Formulario";
 import Lista from "../components/Lista";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
         <Formulario />
         <Lista />
       </div>
+      <Footer/>
     </section>
   );
 }

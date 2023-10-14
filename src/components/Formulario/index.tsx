@@ -3,8 +3,8 @@ import Botao from "../Botao";
 
 export default function Formulario() {
   return (
-    <form className="flex flex-col gap-4">
-      <div>
+    <form className="flex flex-col gap-2">
+      <div className="max-[500px]:flex max-[500px]:flex-col">
         <label className="block font-bold" htmlFor="tarefa">Adicione um novo estudo</label>
         <input
           className="input"
@@ -14,9 +14,8 @@ export default function Formulario() {
           placeholder="O que você quer estudar?"
           required
         />
-        <Botao />
       </div>
-      <div>
+      <div className="max-[500px]:flex max-[500px]:flex-col">
         <label className="block font-bold" htmlFor="tempo">Tempo</label>
         <input
           className="input"
@@ -28,8 +27,8 @@ export default function Formulario() {
           id="tempo"
           required
         />
-        <Botao />
       </div>
+      <Botao />
     </form>
   );
 }
