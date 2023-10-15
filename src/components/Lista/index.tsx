@@ -1,24 +1,10 @@
-import React from "react";
 import Item from "./Item";
-import { useState } from "react"
 
-export default function Lista() {
-  
-  const [tarefas , setTarefas] = useState([
-    {
-      tarefa: "React",
-      tempo: "02:00:00",
-    },
-    {
-      tarefa: "Javascript",
-      tempo: "01:00:00",
-    },
-    {
-      tarefa: "Typescript",
-      tempo: "03:00:00",
-    },
-  ]); 
+interface TarefasLista {
+  tarefas: { tarefa: string; tempo: string }[];
+}
 
+export default function Lista({ tarefas }: TarefasLista) {
   return (
     <aside className="max-[500px]:mb-[1em]">
       <h2 className="font-bold">Estudos do dia</h2>

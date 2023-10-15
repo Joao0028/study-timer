@@ -5,16 +5,20 @@ interface PropsState {
   tarefa: string;
   tempo: string;
 }
-export default function Formulario() {
-  var [state, setState] = useState<PropsState>({
+
+interface Props {
+  setTarefas: React.Dispatch<React.SetStateAction<PropsState[]>>;
+}
+
+export default function Formulario(props: Props) {
+  let [state, setState] = useState<PropsState>({
     tarefa: "",
     tempo: "00:00:00",
   });
 
   function adicionarTarefa(e:React.FormEvent<HTMLFormElement>){
     e.preventDefault();
-    console.log(`Tarefa:` + state.tarefa + " Tempo:" + state.tempo);
-    
+    props.setTarefas((tarefas) => [...tarefas, state]);
   }
 
   return (
@@ -55,7 +59,7 @@ export default function Formulario() {
           required
         />
       </div>
-      <Botao />
+      <Botao type="submit"/>
     </form>
   );
 }
