@@ -3,6 +3,7 @@ import Formulario from "../components/Formulario";
 import Lista from "../components/Lista";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Cronometro from "../components/Cronometro";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Formulario />
         <Lista />
       </div>
+      <Cronometro />
       <Footer/>
     </section>
   );

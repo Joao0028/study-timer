@@ -17,7 +17,7 @@ export default function Lista() {
     },
   ];
   return (
-    <aside className="max-[500px]:mb-[6em]">
+    <aside className="max-[500px]:mb-[1em]">
       <h2 className="font-bold">Estudos do dia</h2>
       <ul className="scrolUl">
         {tarefas.map((item, index) => (

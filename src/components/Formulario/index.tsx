@@ -1,4 +1,3 @@
-import React from "react";
 import Botao from "../Botao";
 
 export default function Formulario() {

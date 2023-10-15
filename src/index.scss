@@ -36,7 +36,7 @@ code {
     @apply h-[50px] w-[380px] px-3 text-[#272341]  border-solid border-b-2 border-cor-azulClaro placeholder:text-cor-cinza font-medium rounded-sm caret-cor-azulClaro max-[500px]:w-[325px] max-md:w-[430px];
   }
   .App {
-    @apply max-md:flex-col gap-[1em] flex my-[15em] justify-center text-cor-branco max-md:items-center max-md:mt-[6em];
+    @apply max-md:flex-col gap-[1em] flex mt-[10em] mb-[2em] justify-center text-cor-branco max-md:items-center max-md:mt-[6em];
   }
   .scrolUl {
     @apply overflow-y-scroll max-h-[210px];
