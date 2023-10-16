@@ -5,16 +5,25 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Cronometro from "../components/Cronometro";
 import { useState } from "react";
+import TarefasLista from "../types/tarefa";
 
 function App() {
-  let [tarefas , setTarefas] = useState<any[]>([]); 
-  
+  let [tarefas, setTarefas] = useState<TarefasLista[]>([]);
+  const [selecionado, setSelecionado] = useState<TarefasLista>();
+
+  function selecionaTarefa(tarefaSelecionada: TarefasLista){
+    setSelecionado(tarefaSelecionada);
+  }
+
   return (
     <section>
       <Header />
       <div className="App">
-        <Formulario setTarefas={setTarefas}/>
-        <Lista tarefas={tarefas}/>
+        <Formulario setTarefas={setTarefas} />
+        <Lista 
+        tarefas={tarefas}
+        selecionaTarefa={selecionaTarefa}
+        />
       </div>
       <Cronometro />
       <Footer />
