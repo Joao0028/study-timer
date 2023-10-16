@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Botao from "../Botao";
+import { v4 as uuidv4 } from "uuid";
 
 interface PropsState {
   tarefa: string;
@@ -16,9 +17,21 @@ export default function Formulario(props: Props) {
     tempo: "00:00:00",
   });
 
-  function adicionarTarefa(e:React.FormEvent<HTMLFormElement>){
+  function adicionarTarefa(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    props.setTarefas((tarefas) => [...tarefas, state]);
+    props.setTarefas((tarefas) => [
+      ...tarefas,
+      {
+        ...state,
+        selecionado:false,
+        completado:false,
+        id: uuidv4()
+      },
+    ]);
+    setState({
+      tarefa: "",
+      tempo: "00:00:00",
+    });
   }
 
   return (
@@ -59,7 +72,7 @@ export default function Formulario(props: Props) {
           required
         />
       </div>
-      <Botao type="submit"/>
+      <Botao type="submit" />
     </form>
   );
 }

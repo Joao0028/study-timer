@@ -7,20 +7,7 @@ import Cronometro from "../components/Cronometro";
 import { useState } from "react";
 
 function App() {
-  let [tarefas , setTarefas] = useState([
-    {
-      tarefa: "React",
-      tempo: "02:00:00",
-    },
-    {
-      tarefa: "Javascript",
-      tempo: "01:00:00",
-    },
-    {
-      tarefa: "Typescript",
-      tempo: "03:00:00",
-    },
-  ]); 
+  let [tarefas , setTarefas] = useState<any[]>([]); 
   
   return (
     <section>
