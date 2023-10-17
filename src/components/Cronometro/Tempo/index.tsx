@@ -1,15 +1,21 @@
-import TempoParaSegundos from "../../../common/utils/Date";
+import TempoParaSegundos from "../../../common/utils/Time";
 
-export default function Tempo() {
-  console.log("conversão: ", TempoParaSegundos("01:01:01"));
-  
+interface Props {
+  tempo: number | undefined;
+}
+
+export default function Tempo({ tempo = 0 }: Props) {
+  const minutos = Math.floor(tempo / 60);
+  const segundos = tempo % 60;
+
+  const [ minutoDezena, minutoUnidade ] = String(minutos).padStart(2, "0");
+  const [ segundoDezena, segundoUnidade ] = String(segundos).padStart(2, "0");
   return (
     <h2 className="text-[22px] mb-1 font-extrabold max-sm:text-[20px]">
-      00
+      {minutoDezena}{minutoUnidade}
       <span className="text-cor-azulClaro">:</span>
-      00
-      <span className="text-cor-azulClaro">:</span>
-      00
+      {segundoDezena}{segundoUnidade}
+      
     </h2>
   );
 }
