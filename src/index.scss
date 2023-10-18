@@ -44,4 +44,7 @@ code {
   .itemSelecionado{
     @apply border-solid border-b-2 border-cor-azulClaro
   }
+  .completado{
+    @apply hidden
+  }
 }

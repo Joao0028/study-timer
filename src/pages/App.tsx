@@ -11,25 +11,43 @@ function App() {
   let [tarefas, setTarefas] = useState<TarefasLista[]>([]);
   const [selecionado, setSelecionado] = useState<TarefasLista>();
 
-  function selecionaTarefa(tarefaSelecionada: TarefasLista){
+  function selecionaTarefa(tarefaSelecionada: TarefasLista) {
     setSelecionado(tarefaSelecionada);
-    setTarefas(tarefasAnteriores => tarefasAnteriores.map(tarefa => ({
-      ...tarefa,
-      selecionado: tarefa.id === tarefaSelecionada.id ? true: false
-    })));
+    setTarefas((tarefasAnteriores) =>
+      tarefasAnteriores.map((tarefa) => ({
+        ...tarefa,
+        selecionado: tarefa.id === tarefaSelecionada.id ? true : false,
+      }))
+    );
   }
 
+  function finalizarTarefa() {
+    if (selecionado) {
+      setSelecionado(undefined);
+      setTarefas((tarefasAnteriores) =>
+        tarefasAnteriores.map((tarefa) => {
+          if (tarefa.id === selecionado.id) {
+            return {
+              ...tarefa,
+              selecionado: false,
+              completado: true,
+            };
+          }
+          return tarefa;
+        })
+      );
+    }
+  }
   return (
     <section>
       <Header />
       <div className="App">
         <Formulario setTarefas={setTarefas} />
-        <Lista 
-        tarefas={tarefas}
-        selecionaTarefa={selecionaTarefa}
-        />
+        <Lista tarefas={tarefas} selecionaTarefa={selecionaTarefa} />
       </div>
-      <Cronometro selecionado={selecionado}/>
+      <Cronometro 
+      finalizarTarefa={finalizarTarefa}
+      selecionado={selecionado} />
       <Footer />
     </section>
   );

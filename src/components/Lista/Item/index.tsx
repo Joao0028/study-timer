@@ -17,7 +17,8 @@ export default function Item({
     <li
       className={` 
       ${selecionado ? "itemSelecionado" : ""} 
-      mb-3 bg-[#141414] pl-3 w-[325px] cursor-pointer py-[6px] border-solid border-b-2 ${selecionado? "": "border-cor-cinza"} max-md:w-[420px] max-[500px]:w-[320px] mr-1 `}
+      ${completado ? "completado" : ""}
+      mb-3 bg-[#141414] pl-3 w-[325px] cursor-pointer py-[6px] border-solid border-b-2  ${selecionado? "": "border-cor-cinza"} max-md:w-[420px] max-[500px]:w-[320px] mr-1 `}
       onClick={() =>
         selecionaTarefa({
           tarefa,
