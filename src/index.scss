@@ -41,10 +41,10 @@ code {
   .scrolUl {
     @apply overflow-y-scroll max-h-[210px];
   }
-  .itemSelecionado{
-    @apply border-solid border-b-2 border-cor-azulClaro
+  .itemSelecionado {
+    @apply border-solid border-b-2 border-cor-azulClaro;
   }
-  .completado{
-    @apply hidden
+  .completado {
+    @apply hidden;
   }
 }
