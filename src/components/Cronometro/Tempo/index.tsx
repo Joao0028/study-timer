@@ -1,5 +1,3 @@
-import TempoParaSegundos from "../../../common/utils/Time";
-
 interface Props {
   tempo: number | undefined;
 }
