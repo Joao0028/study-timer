@@ -9,7 +9,8 @@ module.exports = {
         cor:{
           azulClaro:"#38BDF8",
           branco: "#ffffff",
-          cinza: "#828282"
+          cinza: "#828282",
+          verde: "#07bc0c"
         }
       }
     },

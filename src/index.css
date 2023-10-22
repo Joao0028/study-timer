@@ -42,9 +42,9 @@ code {
     @apply overflow-y-scroll max-h-[210px];
   }
   .itemSelecionado {
-    @apply border-solid border-b-2 border-cor-azulClaro;
+    @apply border-solid border-b-2 ;
   }
   .completado {
-    @apply hidden;
+    @apply border-cor-verde;
   }
 }
