@@ -6,6 +6,8 @@ import Footer from "../components/Footer";
 import Cronometro from "../components/Cronometro";
 import { useState } from "react";
 import TarefasLista from "../types/tarefa";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
 
 function App() {
   let [tarefas, setTarefas] = useState<TarefasLista[]>([]);
@@ -40,6 +42,7 @@ function App() {
   }
   return (
     <section>
+      <ToastContainer />
       <Header />
       <div className="App">
         <Formulario setTarefas={setTarefas} />

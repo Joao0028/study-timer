@@ -1,6 +1,8 @@
 import TarefasLista from "../../../types/tarefa";
 import { AiFillCheckCircle } from "react-icons/ai";
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 interface Props extends TarefasLista {
   selecionaTarefa: (tarefaSelecionada: TarefasLista) => void;
@@ -16,6 +18,42 @@ export default function Item({
 }: Props) {
 
   const [ display , setDisplay] = useState("block")
+
+  function notify() {
+    toast.success("Tarefa concluida!", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+    })
+}
+  function exclude() {
+    toast.success("Tarefa excluida!", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+    })
+}
+
+function excluiTarefa(){
+  exclude()
+  setDisplay("hidden")
+}
+
+useEffect(()=>{
+  if(completado === true){
+    notify()
+  }
+},[completado])
 
   return (
     <li
@@ -37,7 +75,7 @@ export default function Item({
           id,
         })
       }
-    onDoubleClick={() => setDisplay("hidden")}
+    onDoubleClick={() => excluiTarefa()}
     >
       <h3 className="font-medium">{tarefa}</h3>
       <div className="flex items-center w-full justify-between pr-4">
